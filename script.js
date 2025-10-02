@@ -46,8 +46,6 @@ const operate = function (num1, num2){
     return multiply(num1,num2);
 }
 
-operate(a,b);
-
 
 //for all the numbers
 const numBtns = document.querySelectorAll(".num");
@@ -79,7 +77,8 @@ const multiplyBtn = document.querySelector(".mply");
 
 multiplyBtn.addEventListener("click", () => {
     updateDisplay(multiplyBtn.textContent);
-    multiply(a,b);
+    let resultMply = multiply(a,b);
+    display.textContent = resultMply;
 });
 
 
@@ -95,7 +94,8 @@ const equalsBtn = document.querySelector(".eqs");
 equalsBtn.addEventListener("click", () => {
     updateDisplay(equalsBtn.textContent);
 
-})
+    operate(a,b);
+});
 
 const clearBtn = document.querySelector(".clr");
 
