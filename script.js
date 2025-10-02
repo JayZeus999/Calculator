@@ -17,9 +17,9 @@ const divide = (a,b) =>
 divide();
 
 
-let num1;
+let num1 = prompt("pick first number");
 let operator;
-let num2;
+let num2 = prompt("pick second number");
 
 const operate = function (num1, num2){
     return multiply(num1,num2);
@@ -30,6 +30,7 @@ operate();
 
 //Create display;
 const container = document.querySelector("#container");
+
 const display = document.querySelector("#display");
 
 let displayNum = " ";
@@ -50,29 +51,37 @@ numBtns.forEach(btn => {
 
 
 const addBtn = document.querySelector(".add");
-container.appendChild(addBtn);
+// container.appendChild(addBtn);
 
 addBtn.addEventListener("click", () => {
     add(a,b);
 });
 
 const subBtn = document.querySelector(".sub");
-container.appendChild(subBtn);
+// container.appendChild(subBtn);
 
 subBtn.addEventListener("click", () => {
     subtract(a,b);
 });
 
 const multiplyBtn = document.querySelector(".mply");
-container.appendChild(multiplyBtn);
+// container.appendChild(multiplyBtn);
 
 multiplyBtn.addEventListener("click", () => {
     multiply(a,b);
 });
 
 const divideBtn = document.querySelector(".divd");
-container.appendChild(divideBtn);
+// container.appendChild(divideBtn);
 
 divideBtn.addEventListener("click", () => {
     divide(a,b);
+});
+
+
+const clearBtn = document.querySelector(".clr");
+
+clearBtn.addEventListener("click", () => {
+    displayNum = " ";
+    display.textContent = " ";
 });
