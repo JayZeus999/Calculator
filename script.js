@@ -17,15 +17,17 @@ const divide = (a,b) =>
 divide();
 
 
-let num1 = prompt("pick first number");
-let operator;
-let num2 = prompt("pick second number");
+let a = prompt("pick first number");
+let b = prompt("pick second number");
+
+let operator = document
+
 
 const operate = function (num1, num2){
     return multiply(num1,num2);
 }
 
-operate();
+operate(a,b);
 
 
 //Create display;
