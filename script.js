@@ -29,8 +29,8 @@ let updateDisplay = function (digits){
 }
 
 
-let a = prompt("pick first number");
-let b = prompt("pick second number");
+let a;
+let b;
 let operator = null;
 
 let operatorBtns = document.querySelectorAll(".op");
@@ -61,33 +61,41 @@ numBtns.forEach(btn => {
 
 const addBtn = document.querySelector(".add");
 
-
 addBtn.addEventListener("click", () => {
+    updateDisplay(addBtn.textContent);
     add(a,b);
 });
 
+
 const subBtn = document.querySelector(".sub");
 
-
 subBtn.addEventListener("click", () => {
+    updateDisplay(subBtn.textContent);
     subtract(a,b);
 });
 
+
 const multiplyBtn = document.querySelector(".mply");
 
-
 multiplyBtn.addEventListener("click", () => {
-    let result = multiply(a,b);
-    display.textContent = result;
+    updateDisplay(multiplyBtn.textContent);
+    multiply(a,b);
 });
+
 
 const divideBtn = document.querySelector(".divd");
 
-
 divideBtn.addEventListener("click", () => {
+    updateDisplay(divideBtn.textContent);
     divide(a,b);
 });
 
+const equalsBtn = document.querySelector(".eqs");
+
+equalsBtn.addEventListener("click", () => {
+    updateDisplay(equalsBtn.textContent);
+
+})
 
 const clearBtn = document.querySelector(".clr");
 
