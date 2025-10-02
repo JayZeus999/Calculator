@@ -33,10 +33,12 @@ let a = prompt("pick first number");
 let b = prompt("pick second number");
 let operator = null;
 
-let operatorBtn = document.querySelectorAll("#op").forEach(btn => {
-    operatorBtn.addEventListener("click", () => {
+let operatorBtns = document.querySelectorAll(".op");
+
+operatorBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
     operator = btn.textContent;
-    })
+    });
 })
 
 //operate function
@@ -58,7 +60,6 @@ numBtns.forEach(btn => {
 
 
 const addBtn = document.querySelector(".add");
-// container.appendChild(addBtn);
 
 
 addBtn.addEventListener("click", () => {
@@ -66,21 +67,22 @@ addBtn.addEventListener("click", () => {
 });
 
 const subBtn = document.querySelector(".sub");
-// container.appendChild(subBtn);
+
 
 subBtn.addEventListener("click", () => {
     subtract(a,b);
 });
 
 const multiplyBtn = document.querySelector(".mply");
-// container.appendChild(multiplyBtn);
+
 
 multiplyBtn.addEventListener("click", () => {
-    multiply(a,b);
+    let result = multiply(a,b);
+    display.textContent = result;
 });
 
 const divideBtn = document.querySelector(".divd");
-// container.appendChild(divideBtn);
+
 
 divideBtn.addEventListener("click", () => {
     divide(a,b);
