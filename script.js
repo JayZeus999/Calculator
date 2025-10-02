@@ -28,31 +28,24 @@ const operate = function (num1, num2){
 operate();
 
 
-const container = document.querySelector("#container");
-document.body.appendChild(container);
-
-
 //Create display;
+const container = document.querySelector("#container");
 const display = document.querySelector("#display");
-container.prepend(display);
 
 let displayNum = " ";
-
 
 let updateDisplay = function (digits){
     displayNum += digits;
     display.textContent = displayNum;
 }
 
-
 //for all the numbers
 const numBtns = document.querySelectorAll(".num");
-container.appendChild(numBtns);
 
 numBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-    updateDisplay();
-});
+    updateDisplay(btn.textContent);
+    });
 }); 
 
 
