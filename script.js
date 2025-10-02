@@ -32,12 +32,23 @@ const container = document.querySelector("#container");
 document.body.appendChild(container);
 
 let display = document.querySelector("#display");
-display.textContent = "67 ";
 container.append(display);
 
-// let displayPanel = function (){
-    
-// }
+
+let displayNum = " ";
+
+let updateDisplay = function (digits){
+    displayNum += digits;
+    display.textContent = displayNum;
+}
+
+updateDisplay();
+
+
+const numBtns = document.querySelector(".num");
+container.appendChild(numBtns);
+
+numBtns.addEventListener("click", );
 
 
 const addBtn = document.querySelector(".add");
