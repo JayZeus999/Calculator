@@ -53,8 +53,16 @@ operatorBtns.forEach(btn => {
 })
 
 //operate function
-const operate = function (num1, num2){
-    return multiply(num1,num2);
+const operate = function (num1, num2, operator){
+    if (operator === "+"){
+        return add(Number(a), Number(b));
+    }else if (operator === "-"){
+        return subtract(Number(a), Number(b));
+    }else if (operator === "*"){
+        return multiply(Number(a), Number(b));
+    }else if (operator === "/"){
+        return divide(Number(a), Number(b));
+    }
 }
 
 
