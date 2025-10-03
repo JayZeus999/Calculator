@@ -1,3 +1,4 @@
+//Operator functions
 const add = (a,b) => 
     a + b;
 
@@ -10,8 +11,12 @@ const multiply = (a,b) =>
     a * b;
 
 
-const divide = (a,b) =>
-    a / b;
+const divide = (a,b) => {
+    if (b === 0){
+        return "Error";
+    }
+    return a / b;
+}
 
 
 
@@ -29,9 +34,15 @@ let updateDisplay = function (digits){
 }
 
 
-let a;
-let b;
+let a = displayNum;
+displayNum = "";
+
+let b = displayNum;
+displayNum = "";
+
 let operator = null;
+displayNum = "";
+
 
 let operatorBtns = document.querySelectorAll(".op");
 
