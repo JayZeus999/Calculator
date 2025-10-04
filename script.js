@@ -82,53 +82,31 @@ numBtns.forEach(btn => {
 
 const addBtn = document.querySelector(".add");
 
-addBtn.addEventListener("click", () => {
-    updateDisplay(addBtn.textContent);
-    // add(a,b);
-});
-
-
 const subBtn = document.querySelector(".sub");
-
-subBtn.addEventListener("click", () => {
-    updateDisplay(subBtn.textContent);
-    // subtract(a,b);
-});
-
 
 const multiplyBtn = document.querySelector(".mply");
 
-multiplyBtn.addEventListener("click", () => {
-    updateDisplay(multiplyBtn.textContent);
-
-});
-
-
 const divideBtn = document.querySelector(".divd");
-
-divideBtn.addEventListener("click", () => {
-    updateDisplay(divideBtn.textContent);
-    // divide(a,b);
-});
 
 
 const equalsBtn = document.querySelector(".eqs");
 
 equalsBtn.addEventListener("click", () => {
-    updateDisplay(equalsBtn.textContent);
-
     b = Number(displayNum);
 
     const result = operate(a, b, operator);
     
     displayNum = result.toString();
     display.textContent = displayNum;
+
+    a = result;
+    operator = null;
 });
 
 
 const clearBtn = document.querySelector(".clr");
 
 clearBtn.addEventListener("click", () => {
-    displayNum = " ";
-    display.textContent = " ";
+    displayNum = "";
+    display.textContent = "";
 });
