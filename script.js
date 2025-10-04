@@ -34,27 +34,30 @@ let updateDisplay = function (digits){
 }
 
 
-let a = displayNum;
-displayNum = "";
+let a =  null;
 
-let b = displayNum;
-displayNum = "";
+let b = null;
 
 let operator = null;
-displayNum = "";
 
 
 let operatorBtns = document.querySelectorAll(".op");
 
 operatorBtns.forEach(btn => {
     btn.addEventListener("click", () => {
+    
+    a = Number(displayNum);
+
     operator = btn.textContent;
+
+    displayNum = "";
+    display.textContent = "";
     });
 })
 
 //operate function
 const operate = function (num1, num2, operator){
-    
+
     if (operator === "+"){
         return add(Number(num1), Number(num2));
     }else if (operator === "-"){
@@ -81,7 +84,7 @@ const addBtn = document.querySelector(".add");
 
 addBtn.addEventListener("click", () => {
     updateDisplay(addBtn.textContent);
-    add(a,b);
+    // add(a,b);
 });
 
 
@@ -89,7 +92,7 @@ const subBtn = document.querySelector(".sub");
 
 subBtn.addEventListener("click", () => {
     updateDisplay(subBtn.textContent);
-    subtract(a,b);
+    // subtract(a,b);
 });
 
 
@@ -97,8 +100,7 @@ const multiplyBtn = document.querySelector(".mply");
 
 multiplyBtn.addEventListener("click", () => {
     updateDisplay(multiplyBtn.textContent);
-    let resultMply = multiply(a,b);
-    display.textContent = resultMply;
+
 });
 
 
@@ -106,16 +108,23 @@ const divideBtn = document.querySelector(".divd");
 
 divideBtn.addEventListener("click", () => {
     updateDisplay(divideBtn.textContent);
-    divide(a,b);
+    // divide(a,b);
 });
+
 
 const equalsBtn = document.querySelector(".eqs");
 
 equalsBtn.addEventListener("click", () => {
     updateDisplay(equalsBtn.textContent);
 
-    operate(a,b);
+    b = Number(displayNum);
+
+    const result = operate(a, b, operator);
+    
+    displayNum = result;
+    display.textContent = displayNum;
 });
+
 
 const clearBtn = document.querySelector(".clr");
 
