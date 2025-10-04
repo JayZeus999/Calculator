@@ -51,7 +51,6 @@ operatorBtns.forEach(btn => {
     operator = btn.textContent;
 
     displayNum = "";
-    display.textContent = "";
     });
 })
 
@@ -114,3 +113,5 @@ clearBtn.addEventListener("click", () => {
     b = null;
     operator = null;
 });
+
+console.log("a:", a, "b:", b, "op:", operator);
