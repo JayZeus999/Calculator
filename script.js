@@ -26,6 +26,9 @@ const container = document.querySelector("#container");
 
 const display = document.querySelector("#display");
 
+const subDisplay = document.querySelector(".subdisplay");
+// container.insertBefore(display, subDisplay);
+
 let displayNum = "";
 
 let updateDisplay = function (digits){
@@ -92,6 +95,7 @@ const multiplyBtn = document.querySelector(".mply");
 const divideBtn = document.querySelector(".divd");
 
 
+
 const equalsBtn = document.querySelector(".eqs");
 
 equalsBtn.addEventListener("click", () => {
@@ -99,10 +103,12 @@ equalsBtn.addEventListener("click", () => {
     
     b = Number(displayNum);
 
+    subDisplay.textContent = `${a} ${operator} ${b}`;
+
     const result = operate(a, b, operator);
     
+    display.textContent = result;
     displayNum = result.toString();
-    display.textContent = displayNum;
 
     a = result;
     operator = null;
@@ -115,6 +121,7 @@ clearBtn.addEventListener("click", () => {
     
     displayNum = "";
     display.textContent = "";
+    subDisplay.textContent = "";
     a = null;
     b = null;
     operator = null;
