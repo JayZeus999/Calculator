@@ -107,6 +107,10 @@ equalsBtn.addEventListener("click", () => {
 const clearBtn = document.querySelector(".clr");
 
 clearBtn.addEventListener("click", () => {
+    
     displayNum = "";
     display.textContent = "";
+    a = null;
+    b = null;
+    operator = null;
 });
