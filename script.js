@@ -105,7 +105,7 @@ equalsBtn.addEventListener("click", () => {
     display.textContent = displayNum;
 
     a = result;
-    // operator = null;
+    operator = null;
 });
 
 
