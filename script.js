@@ -54,6 +54,7 @@ operatorBtns.forEach(btn => {
 
 //operate function
 const operate = function (num1, num2, operator){
+    
     if (operator === "+"){
         return add(Number(num1), Number(num2));
     }else if (operator === "-"){
