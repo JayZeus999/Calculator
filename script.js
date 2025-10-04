@@ -55,13 +55,13 @@ operatorBtns.forEach(btn => {
 //operate function
 const operate = function (num1, num2, operator){
     if (operator === "+"){
-        return add(Number(a), Number(b));
+        return add(Number(num1), Number(num2));
     }else if (operator === "-"){
-        return subtract(Number(a), Number(b));
+        return subtract(Number(num1), Number(num2));
     }else if (operator === "*"){
-        return multiply(Number(a), Number(b));
+        return multiply(Number(num1), Number(num2));
     }else if (operator === "/"){
-        return divide(Number(a), Number(b));
+        return divide(Number(num1), Number(num2));
     }
 }
 
