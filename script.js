@@ -46,9 +46,13 @@ let operatorBtns = document.querySelectorAll(".op");
 operatorBtns.forEach(btn => {
     btn.addEventListener("click", () => {
     
+    if (displayNum === "") return;
+    
     a = Number(displayNum);
 
     operator = btn.textContent;
+
+    display.textContent = `${a} ${operator}`;
 
     displayNum = "";
     });
@@ -91,6 +95,8 @@ const divideBtn = document.querySelector(".divd");
 const equalsBtn = document.querySelector(".eqs");
 
 equalsBtn.addEventListener("click", () => {
+    if (a === null || operator === null || displayNum === "") return;
+    
     b = Number(displayNum);
 
     const result = operate(a, b, operator);
@@ -99,7 +105,7 @@ equalsBtn.addEventListener("click", () => {
     display.textContent = displayNum;
 
     a = result;
-    operator = null;
+    // operator = null;
 });
 
 
