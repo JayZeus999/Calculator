@@ -121,7 +121,7 @@ equalsBtn.addEventListener("click", () => {
 
     const result = operate(a, b, operator);
     
-    displayNum = result;
+    displayNum = result.toString();
     display.textContent = displayNum;
 });
 
