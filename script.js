@@ -127,4 +127,14 @@ clearBtn.addEventListener("click", () => {
     operator = null;
 });
 
+
+const bspcBtn = document.querySelector(".bspc");
+
+bspcBtn.addEventListener("click", () => {
+    let result2 = displayNum.slice(0,-1);
+    display.textContent = result2;
+    displayNum = "";
+    displayNum = result2;
+});
+
 console.log("a:", a, "b:", b, "op:", operator);
