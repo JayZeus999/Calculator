@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -8,40 +9,39 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #121212;
-  font-family: "Poppins", sans-serif;
   margin: 0;
 }
 
 #container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   background-color: #1e1e1e;
   border-radius: 20px;
   padding: 20px;
-  height: 500px;
-  width: 300px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  height: 600px;
+  width: 340px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
 
 }
 
 
 .display {
+  height: 140px;
   width: 100%;
   text-align: right;
-  background-color: #1a1a1a;
-  border-radius: 15px;
+  background-color: #181818;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-end;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
-  padding: 15px 20px;
-  color: white;
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.5),
-              inset 0 -3px 8px rgba(255, 255, 255, 0.05);
-  margin-bottom: 15px;
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.05),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -52,6 +52,82 @@ body {
 }
 
 .main-display {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 600;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+
+button {
+  border: none;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  background-color: #2d2d2d;
+  color: white;
+  padding: 18px 0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+
+button:hover {
+  background-color: #3c3c3c;
+  transform: translateY(-2px);
+}
+
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+
+.op {
+  background-color: #0078ff;
+}
+
+.op:hover {
+  background-color: #339aff;
+}
+
+.clr {
+  background-color: #d83b3b;
+}
+
+.clr:hover {
+  background-color: #ff4d4d;
+}
+
+.eqs {
+  background-color: #1ebc61;
+  grid-row: span 2;
+}
+
+.eqs:hover {
+  background-color: #24d46e;
+}
+
+
+.zero {
+  grid-column: span 2;
+}
+
+.main-display::-webkit-scrollbar {
+  height: 6px;
+}
+
+.main-display::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 3px;
 }

@@ -57,8 +57,8 @@ operatorBtns.forEach(btn => {
 
         operator = btn.textContent;
 
-        mainDisplay.textContent = `${a} ${operator}`;
         subDisplay.textContent = `${a} ${operator}`;
+        mainDisplay.textContent = `${a} ${operator}`;
 
         displayNum = "";
     });
@@ -106,10 +106,14 @@ equalsBtn.addEventListener("click", () => {
 
 
     b = Number(displayNum);
-
     subDisplay.textContent = `${a} ${operator} ${b}`;
 
-    const result = operate(a, b, operator);
+
+    let result = operate(a, b, operator);
+
+    if (typeof result === "number") {
+        result = parseFloat(result.toFixed(6));
+    }
 
     mainDisplay.textContent = result;
     displayNum = result.toString();
