@@ -24,16 +24,18 @@ const divide = (a, b) => {
 //Create display;
 const container = document.querySelector("#container");
 
-const display = document.querySelector("#display");
+const display = document.querySelector(".display");
 
 const subDisplay = document.querySelector(".subdisplay");
+
+const mainDisplay = document.querySelector(".main-display");
 // container.insertBefore(display, subDisplay);
 
 let displayNum = "";
 
 let updateDisplay = function (digits) {
     displayNum += digits;
-    display.textContent = displayNum;
+    mainDisplay.textContent = displayNum;
 }
 
 
@@ -55,7 +57,7 @@ operatorBtns.forEach(btn => {
 
         operator = btn.textContent;
 
-        display.textContent = `${a} ${operator}`;
+        mainDisplay.textContent = `${a} ${operator}`;
         subDisplay.textContent = `${a} ${operator}`;
 
         displayNum = "";
@@ -109,7 +111,7 @@ equalsBtn.addEventListener("click", () => {
 
     const result = operate(a, b, operator);
 
-    display.textContent = result;
+    mainDisplay.textContent = result;
     displayNum = result.toString();
 
     a = result;
@@ -122,7 +124,7 @@ const clearBtn = document.querySelector(".clr");
 clearBtn.addEventListener("click", () => {
 
     displayNum = "";
-    display.textContent = "";
+    mainDisplay.textContent = "";
     subDisplay.textContent = "";
     a = null;
     b = null;
@@ -134,7 +136,7 @@ const bspcBtn = document.querySelector(".bspc");
 
 bspcBtn.addEventListener("click", () => {
     let result2 = displayNum.slice(0, -1);
-    display.textContent = result2;
+    mainDisplay.textContent = result2;
     displayNum = "";
     displayNum = result2;
 });

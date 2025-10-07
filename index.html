@@ -5,52 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-
     <div id="container">
-        <p class="subdisplay"></p>
-        <p id="display"></p>
 
+        <div class="display">
 
+            <span class="subdisplay"></span>
+            <span class="main-display"></span>
+
+        </div>
 
         <div class="btn-container">
 
-            <!-- Operators -->
-            <button class="op add">+</button>
-            <button class="op sub">-</button>
-            <button class="op mply">*</button>
+            <!-- Control Buttons -->
+            <button class="clr">AC</button>
+            <button class="bspc">⌫</button>
             <button class="op divd">/</button>
+            <button class="op mply">*</button>
 
-
-            <!-- Digital Numbers -->
-            <button class="num">0</button>
-            <button class="num">1</button>
-            <button class="num">2</button>
-            <button class="num">3</button>
-            <button class="num">4</button>
-            <button class="num">5</button>
-            <button class="num">6</button>
+            <!-- Numbers and Operators -->
             <button class="num">7</button>
             <button class="num">8</button>
             <button class="num">9</button>
-            <button class="num">.</button>
+            <button class="op sub">-</button>
 
+            <button class="num">4</button>
+            <button class="num">5</button>
+            <button class="num">6</button>
+            <button class="op add">+</button>
 
-            <!-- Controls     -->
-            <button class="clr">A/C</button>
-            <button class="bspc">X</button>
+            <button class="num">1</button>
+            <button class="num">2</button>
+            <button class="num">3</button>
             <button class="eqs">=</button>
+
+            <button class="num zero">0</button>
+            <button class="num">.</button>
 
         </div>
 
     </div>
 
-    <script src="./script.js"> </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
