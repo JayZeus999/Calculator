@@ -33,11 +33,6 @@ const mainDisplay = document.querySelector(".main-display");
 
 let displayNum = "";
 
-let updateDisplay = function (digits) {
-    displayNum += digits;
-    mainDisplay.textContent = displayNum;
-}
-
 
 let a = null;
 
@@ -84,7 +79,14 @@ const numBtns = document.querySelectorAll(".num");
 
 numBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-        updateDisplay(btn.textContent);     //calls the updateDisplay
+        displayNum += btn.textContent;
+
+        if (a !== null && operator !== null) {
+            mainDisplay.textContent = `${a} ${operator} ${displayNum}`;
+        } else {
+            mainDisplay.textContent = displayNum;
+        }
+
     });
 });
 
