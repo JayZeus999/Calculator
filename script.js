@@ -29,7 +29,8 @@ const display = document.querySelector(".display");
 const subDisplay = document.querySelector(".subdisplay");
 
 const mainDisplay = document.querySelector(".main-display");
-// container.insertBefore(display, subDisplay);
+
+
 
 let displayNum = "";
 
@@ -58,6 +59,7 @@ operatorBtns.forEach(btn => {
         displayNum = "";
     });
 })
+
 
 //operate function
 const operate = function (num1, num2, operator) {
@@ -91,6 +93,7 @@ numBtns.forEach(btn => {
 });
 
 
+//OPERATORS
 const addBtn = document.querySelector(".add");
 
 const subBtn = document.querySelector(".sub");
@@ -141,10 +144,8 @@ clearBtn.addEventListener("click", () => {
 const bspcBtn = document.querySelector(".bspc");
 
 bspcBtn.addEventListener("click", () => {
-    let result2 = displayNum.slice(0, -1);
-    mainDisplay.textContent = result2;
-    displayNum = "";
-    displayNum = result2;
+
+    displayNum = displayNum.slice(0, -1);
+    mainDisplay.textContent = displayNum;
 });
 
-console.log("a:", a, "b:", b, "op:", operator);
