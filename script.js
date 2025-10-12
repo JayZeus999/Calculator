@@ -124,7 +124,14 @@ clearBtn.addEventListener("click", () => {
 
 
 bspcBtn.addEventListener("click", () => {
+    let removeNum = mainDisplay.textContent.split(" ");
+    
+    if (removeNum.length === 2){
+        removeNum.pop();
+        displayNum = removeNum.join(" ");
+    }else{
+        displayNum = displayNum.slice(0, -1);
+    }
 
-    displayNum = displayNum.slice(0, -1);
     mainDisplay.textContent = displayNum;
 });
