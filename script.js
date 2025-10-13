@@ -124,14 +124,23 @@ clearBtn.addEventListener("click", () => {
 
 
 bspcBtn.addEventListener("click", () => {
-    let removeNum = mainDisplay.textContent.split(" ");
-    
-    if (removeNum.length === 2){
-        removeNum.pop();
-        displayNum = removeNum.join(" ");
-    }else{
-        displayNum = displayNum.slice(0, -1);
-    }
+  let removeNum = mainDisplay.textContent.trim().split(" ");
 
-    mainDisplay.textContent = displayNum;
+  if (removeNum.length === 3 && removeNum[2] === "") {
+    removeNum.pop(); 
+    removeNum.pop(); 
+  } 
+  else if (removeNum.length === 3) {
+    removeNum[2] = removeNum[2].slice(0, -1);
+    if (removeNum[2] === "") removeNum.pop(); 
+  } 
+  else if (removeNum.length === 2) {
+    removeNum.pop();
+  } 
+  else {
+    removeNum[0] = removeNum[0].slice(0, -1);
+  }
+
+  displayNum = removeNum.join(" ");
+  mainDisplay.textContent = displayNum;
 });
